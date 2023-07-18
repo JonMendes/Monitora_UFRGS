@@ -28,7 +28,6 @@ namespace MonitoraUFRGS
             a.idAluno = 00290195;
             a.idMonitor = 00190200;
             //a.idAula não precisa pq é autoincrement
-            a.idAula = 1;
 
             SolicitarController sc = new SolicitarController();
 

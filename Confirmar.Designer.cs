@@ -72,6 +72,7 @@
             button_Recusar.TabIndex = 3;
             button_Recusar.Text = "Recusar";
             button_Recusar.UseVisualStyleBackColor = true;
+            button_Recusar.Click += button_Recusar_Click;
             // 
             // Confirmar
             // 

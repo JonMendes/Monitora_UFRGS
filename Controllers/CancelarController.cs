@@ -11,25 +11,23 @@ namespace MonitoraUFRGS.Controllers
 {
     public class CancelarController()
     {
+        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
+        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
 
-        private NpgsqlConnection connection;
-
-        //public CancelarController(NpgsqlConnection connection)
-        //{
-        //    this.connection = connection;
-        //}
-
-        public void ExcluirTabelaAula(Aula a)
+        public void cancelarAula(int idA)
         {
             using (var command = new NpgsqlCommand())
             {
                 command.Connection = connection;
+
+                connection.Open();
+
                 command.CommandText = @"
-                    DELETE * FROM Aula WHERE idAula = @ID
+                    DELETE FROM Aula WHERE idAula = @ID
                 "
                 ;
 
-                command.Parameters.AddWithValue("ID", a.idAula);
+                command.Parameters.AddWithValue("ID", idA);
 
                 command.ExecuteNonQuery();
             }

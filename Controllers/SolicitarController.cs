@@ -11,18 +11,9 @@ using System.Threading.Tasks;
 namespace MonitoraUFRGS.Controllers
 {
     public class SolicitarController
-    {
-        //PostgreSQLConnector connector = new();
-       
+    {  
         private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
         NpgsqlConnection connection = new NpgsqlConnection(connectionString);
-
-        //connection = connector.GetConnection();
-
-        // public SolicitarController()
-        // {
-        //    this.connection = connector.GetConnection();
-        // }
 
         public void CriarTabelaAula()
         {
@@ -56,10 +47,10 @@ namespace MonitoraUFRGS.Controllers
                 connection.Open();
 
                 command.CommandText = @"
-                INSERT INTO Aula (idAula, horaInicio, horaFinal, disciplina, confirmado, remoto, idMonitor, idAluno)
-                VALUES (@ID, @Horadeinicio, @Horadetermino, @Disciplina, @Confirmado, @Remoto, @IDdoMonitor, @IDdoAluno)
+                INSERT INTO Aula (horaInicio, horaFinal, disciplina, confirmado, remoto, idMonitor, idAluno)
+                VALUES (@Horadeinicio, @Horadetermino, @Disciplina, @Confirmado, @Remoto, @IDdoMonitor, @IDdoAluno)
                 ";
-                command.Parameters.AddWithValue("ID", a.idAula);
+                //command.Parameters.AddWithValue("ID", a.idAula);
                 command.Parameters.AddWithValue("Horadeinicio", a.horaInicio);
                 command.Parameters.AddWithValue("Horadetermino", a.horaFinal);
                 command.Parameters.AddWithValue("Disciplina", a.disciplina);

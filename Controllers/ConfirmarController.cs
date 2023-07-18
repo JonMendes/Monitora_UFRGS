@@ -9,29 +9,28 @@ using Npgsql;
 
 namespace MonitoraUFRGS.Controllers
 {
-    public class ConfirmarController()
-    {
+    public class ConfirmarController{
 
-        private NpgsqlConnection connection;
+        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
+        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
 
-        //public ConfirmarController(NpgsqlConnection connection)
-        //{
-        //    this.connection = connection;
-        //}
-
-        public void AtualizarTabelaAula(Aula a)
+        public void confirmarAula(int idA)
         {
             using (var command = new NpgsqlCommand())
             {
                 command.Connection = connection;
+
+                connection.Open();
+
                 command.CommandText = @"
                  UPDATE Aula SET confirmado=TRUE WHERE idAula = @ID
                 "
                 ;
 
-                command.Parameters.AddWithValue("ID", a.idAula);
+                command.Parameters.AddWithValue("ID", idA);
 
                 command.ExecuteNonQuery();
+                connection.Close();
             }
         }
     }
