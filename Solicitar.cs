@@ -1,4 +1,4 @@
-using MonitoraUFRGS.Controller;
+using MonitoraUFRGS.Controllers;
 using System.Security.Cryptography.X509Certificates;
 
 namespace MonitoraUFRGS
