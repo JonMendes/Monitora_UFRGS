@@ -14,10 +14,10 @@ namespace MonitoraUFRGS.Controllers
 
         private NpgsqlConnection connection;
 
-        public ConfirmarController(NpgsqlConnection connection)
-        {
-            this.connection = connection;
-        }
+        //public ConfirmarController(NpgsqlConnection connection)
+        //{
+        //    this.connection = connection;
+        //}
 
         public void AtualizarTabelaAula(Aula a)
         {

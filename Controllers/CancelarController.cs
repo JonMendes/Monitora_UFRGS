@@ -14,10 +14,10 @@ namespace MonitoraUFRGS.Controllers
 
         private NpgsqlConnection connection;
 
-        public CancelarController(NpgsqlConnection connection)
-        {
-            this.connection = connection;
-        }
+        //public CancelarController(NpgsqlConnection connection)
+        //{
+        //    this.connection = connection;
+        //}
 
         public void ExcluirTabelaAula(Aula a)
         {

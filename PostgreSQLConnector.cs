@@ -8,7 +8,7 @@ using Npgsql;
 
 public class PostgreSQLConnector
 {
-    private string connectionString = "Server=<PostgreSQL 15>;Port=<5432>;Database=<monitora_ufrgs>;User Id=<postgres>;Password=<r3c0v4l3>;";
+    private string connectionString = "Server=<127.0.0.1>;Port=<5432>;Database=<monitora_ufrgs>;User Id=<postgres>;Password=<r3c0v4l3>;";
 
     public NpgsqlConnection GetConnection()
     {

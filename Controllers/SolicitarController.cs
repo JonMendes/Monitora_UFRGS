@@ -10,17 +10,21 @@ using System.Threading.Tasks;
 
 namespace MonitoraUFRGS.Controllers
 {
-    class SolicitarController()
+    public class SolicitarController
     {
+        //PostgreSQLConnector connector = new();
        
-        private NpgsqlConnection connection;
+        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
+        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
 
-        public SolicitarController(NpgsqlConnection connection)
-        {
-            this.connection = connection;
-        }
+        //connection = connector.GetConnection();
 
-        public void CriarTabelaAula(Aula a)
+        // public SolicitarController()
+        // {
+        //    this.connection = connector.GetConnection();
+        // }
+
+        public void CriarTabelaAula()
         {
             using (var command = new NpgsqlCommand())
             {
@@ -48,21 +52,24 @@ namespace MonitoraUFRGS.Controllers
             using (var command = new NpgsqlCommand())
             {
                 command.Connection = connection;
+
+                connection.Open();
+
                 command.CommandText = @"
                 INSERT INTO Aula (idAula, horaInicio, horaFinal, disciplina, confirmado, remoto, idMonitor, idAluno)
-                VALUES (@ID, @Hora de início, @Hora de término, @Disciplina, @Confirmado, @Remoto, @ID do Monitor, @ID do Aluno)
+                VALUES (@ID, @Horadeinicio, @Horadetermino, @Disciplina, @Confirmado, @Remoto, @IDdoMonitor, @IDdoAluno)
                 ";
                 command.Parameters.AddWithValue("ID", a.idAula);
-                command.Parameters.AddWithValue("Hora de início", a.horaInicio);
-                command.Parameters.AddWithValue("Hora de término", a.horaFinal);
+                command.Parameters.AddWithValue("Horadeinicio", a.horaInicio);
+                command.Parameters.AddWithValue("Horadetermino", a.horaFinal);
                 command.Parameters.AddWithValue("Disciplina", a.disciplina);
                 command.Parameters.AddWithValue("Confirmado", a.confirmado);
                 command.Parameters.AddWithValue("Remoto", a.remoto);
-                command.Parameters.AddWithValue("ID do Monitor", a.idMonitor);
-                command.Parameters.AddWithValue("ID do Aluno", a.idAluno);
-                
+                command.Parameters.AddWithValue("IDdoMonitor", a.idMonitor);
+                command.Parameters.AddWithValue("IDdoAluno", a.idAluno);
 
                 command.ExecuteNonQuery();
+                connection.Close();
             }
         }
     }

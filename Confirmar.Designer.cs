@@ -62,6 +62,7 @@
             button_Confirmar.TabIndex = 2;
             button_Confirmar.Text = "Confirmar";
             button_Confirmar.UseVisualStyleBackColor = true;
+            button_Confirmar.Click += button_Confirmar_Click;
             // 
             // button_Recusar
             // 
@@ -82,7 +83,7 @@
             Controls.Add(list_Aulas);
             Controls.Add(label_Confirmar);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Confirmar";
             Text = "Confirmar";
             ResumeLayout(false);

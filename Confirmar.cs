@@ -16,5 +16,10 @@ namespace MonitoraUFRGS
         {
             InitializeComponent();
         }
+
+        private void button_Confirmar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
