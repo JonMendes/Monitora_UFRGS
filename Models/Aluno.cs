@@ -14,13 +14,13 @@ namespace MonitoraUFRGS.Models
     {
         // Atributos
         [Key]
-        private int _idAluno;
+        public int idAluno { get; set; }
         [Column("nome")]
-        private string _nome;
+        public string nome { get; set; }
         [Column("curso")]
-        private string _curso;
+        public string curso { get; set; }
         [Column("disciplinasMatriculadas")]
-        private List<string> _disciplinasMatriculadas;
+        public List<string> disciplinasMatriculadas { get; set; }
 
         // Construtor
         public Aluno() { }

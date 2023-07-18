@@ -38,7 +38,7 @@ namespace MonitoraUFRGS.Controllers
                     FOREIGN KEY (idMonitor) REFERENCES monitor (idAluno),
                     FOREIGN KEY (idAluno) REFERENCES aluno (idAluno)
                 )
-            ";
+                ";
                 command.ExecuteNonQuery();
             }
         }
@@ -51,23 +51,21 @@ namespace MonitoraUFRGS.Controllers
                 command.CommandText = @"
                 INSERT INTO Aula (idAula, horaInicio, horaFinal, disciplina, confirmado, remoto, idMonitor, idAluno)
                 VALUES (@ID, @Hora de início, @Hora de término, @Disciplina, @Confirmado, @Remoto, @ID do Monitor, @ID do Aluno)
-            ";
-                command.Parameters.AddWithValue("ID", a.getIdAula());
-                command.Parameters.AddWithValue("Hora de início", a.getHoraInicio());
-                command.Parameters.AddWithValue("Hora de término", a.getHoraFinal());
-                command.Parameters.AddWithValue("Disciplina", a.getDisciplina());
-                command.Parameters.AddWithValue("Confirmado", a.getConfirmado());
-                command.Parameters.AddWithValue("Remoto", a.getRemoto());
-                command.Parameters.AddWithValue("ID do Monitor", a.getIdMonitor());
-                command.Parameters.AddWithValue("ID do Aluno", a.getIdAluno());
+                ";
+                command.Parameters.AddWithValue("ID", a.idAula);
+                command.Parameters.AddWithValue("Hora de início", a.horaInicio);
+                command.Parameters.AddWithValue("Hora de término", a.horaFinal);
+                command.Parameters.AddWithValue("Disciplina", a.disciplina);
+                command.Parameters.AddWithValue("Confirmado", a.confirmado);
+                command.Parameters.AddWithValue("Remoto", a.remoto);
+                command.Parameters.AddWithValue("ID do Monitor", a.idMonitor);
+                command.Parameters.AddWithValue("ID do Aluno", a.idAluno);
                 
 
                 command.ExecuteNonQuery();
             }
-
         }
-
-}
+    }
 }
 
 

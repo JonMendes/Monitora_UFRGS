@@ -12,21 +12,21 @@ namespace MonitoraUFRGS.Models
     {
         // Atributos
         [Key]
-        private int _idAula;
+        public int idAula { get; set; }
         [Column("horaInicio")]
-        private DateTime _horaInicio;
+        public DateTime horaInicio { get; set; }
         [Column("horaFinal")]
-        private DateTime _horaFinal;
+        public DateTime horaFinal { get; set; }
         [Column("disciplina")]
-        private string _disciplina;
+        public string disciplina { get; set; }
         [Column("confirmado")]
-        private bool _confirmado;
+        public bool confirmado { get; set; }
         [Column("remoto")]
-        private bool _remoto;
+        public bool remoto { get; set; }
         [ForeignKey("monitor")]
-        private int _idMonitor;
+        public int idMonitor { get; set; }
         [ForeignKey("aluno")]
-        private int _idAluno;
+        public int idAluno { get; set; }
 
         // Relacionamentos de navegação
         public virtual Aluno aluno { get; set; }

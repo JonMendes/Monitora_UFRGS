@@ -11,9 +11,9 @@ namespace MonitoraUFRGS.Models
     public class Professor
     {
         [Key]
-        private int _id;
+        public int id { get; set; }
         [Column("horaInicio")]
-        private DateTime _horaInicio;
+        public DateTime horaInicio { get; set; }
 
         public Professor() { }
     }

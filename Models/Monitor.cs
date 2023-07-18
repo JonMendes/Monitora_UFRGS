@@ -12,17 +12,17 @@ namespace MonitoraUFRGS.Models
     {
         // Atributos
         [Key]
-        private int _idAluno;
+        public int idAluno { get; set; }
         [Column("nome")]
-        private string _nome;
+        public string nome { get; set; }
         [Column("curso")]
-        private string _curso;
+        public string curso { get; set; }
         [Column("disciplinaMonitoria")]
-        private string _disciplinaMonitoria;
+        public string disciplinaMonitoria { get; set; }
         [Column("nome")]
-        private List<Tuple<DateTime, DateTime>> _horariosDisponiveis;
+        public List<Tuple<DateTime, DateTime>> horariosDisponiveis { get; set; }
         [ForeignKey("orientador")]
-        private int _idOrientador;
+        public int idOrientador { get; set; }
 
         public virtual Professor orientador { get; set; }
 

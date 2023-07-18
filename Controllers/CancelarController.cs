@@ -9,7 +9,9 @@ using System.Windows.Input;
 
 namespace MonitoraUFRGS.Controllers
 {
-    public class CancelarController() {
+    public class CancelarController()
+    {
+
         private NpgsqlConnection connection;
 
         public CancelarController(NpgsqlConnection connection)
@@ -27,7 +29,7 @@ namespace MonitoraUFRGS.Controllers
                 "
                 ;
 
-                command.Parameters.AddWithValue("ID", a.getIdAula());
+                command.Parameters.AddWithValue("ID", a.idAula);
 
                 command.ExecuteNonQuery();
             }

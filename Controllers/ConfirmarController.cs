@@ -11,6 +11,7 @@ namespace MonitoraUFRGS.Controllers
 {
     public class ConfirmarController()
     {
+
         private NpgsqlConnection connection;
 
         public ConfirmarController(NpgsqlConnection connection)
@@ -25,10 +26,10 @@ namespace MonitoraUFRGS.Controllers
                 command.Connection = connection;
                 command.CommandText = @"
                  UPDATE Aula SET confirmado=TRUE WHERE idAula = @ID
-            "
+                "
                 ;
 
-                command.Parameters.AddWithValue("ID", a.getIdAula());
+                command.Parameters.AddWithValue("ID", a.idAula);
 
                 command.ExecuteNonQuery();
             }
