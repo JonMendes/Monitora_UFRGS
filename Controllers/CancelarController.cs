@@ -1,18 +1,10 @@
-﻿using MonitoraUFRGS.Models;
-using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using Npgsql;
 
 namespace MonitoraUFRGS.Controllers
 {
     public class CancelarController()
     {
-        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
-        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+        private NpgsqlConnection connection = PostgreSQLConnector.GetConnection();
 
         public void cancelarAula(int idA)
         {
@@ -22,10 +14,7 @@ namespace MonitoraUFRGS.Controllers
 
                 connection.Open();
 
-                command.CommandText = @"
-                    DELETE FROM Aula WHERE idAula = @ID
-                "
-                ;
+                command.CommandText = @"DELETE FROM Aula WHERE idAula = @ID";
 
                 command.Parameters.AddWithValue("ID", idA);
 

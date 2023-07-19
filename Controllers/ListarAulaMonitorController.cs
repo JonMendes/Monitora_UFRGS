@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MonitoraUFRGS.Models;
-using Npgsql;
+﻿using Npgsql;
 
 namespace MonitoraUFRGS.Controllers
 {
     public class ListarAulaMonitorController
     {
-        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
-        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+        private NpgsqlConnection connection = PostgreSQLConnector.GetConnection();
 
         private List<string> aulas = new();
 
@@ -26,8 +18,7 @@ namespace MonitoraUFRGS.Controllers
 
                 command.CommandText = @"
                  SELECT * FROM Aula WHERE idMonitor = IdMonitor
-                "
-                ;
+                ";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(command.CommandText, connection);
                 

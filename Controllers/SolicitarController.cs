@@ -1,19 +1,12 @@
-﻿using MonitoraUFRGS;
-using MonitoraUFRGS.Models;
+﻿using MonitoraUFRGS.Models;
 using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace MonitoraUFRGS.Controllers
 {
     public class SolicitarController
-    {  
-        private const string connectionString = "Server=localhost;Port=5432;Database=monitora_ufrgs;User Id=postgres;Password=r3c0v4l3;";
-        NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+    {
+        private NpgsqlConnection connection = PostgreSQLConnector.GetConnection();
 
         public void CriarTabelaAula()
         {
@@ -32,8 +25,8 @@ namespace MonitoraUFRGS.Controllers
                     idAluno INTEGER,
                     FOREIGN KEY (idMonitor) REFERENCES monitor (idAluno),
                     FOREIGN KEY (idAluno) REFERENCES aluno (idAluno)
-                )
-                ";
+                )";
+
                 command.ExecuteNonQuery();
             }
         }
