@@ -1,0 +1,154 @@
+  
+
+
+
+:root
+{
+  --branco:  white;
+  --preto:   black;
+  --azul:    rgb(0, 162, 232);
+  --verde:   rgb(1, 255, 115);
+} 
+
+.parametros
+{
+  color:            var(--branco);
+  background-color: var(--azul);
+
+  font-size: 20px;
+}
+  
+  
+.alinhamentoH 
+{
+  text-align: center;
+}
+
+.alinhamentoVs /* desativado por enquanto, apagar o "s" para testar*/
+{
+  margin: 0;
+  top: 50%;
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.botao 
+{
+  height:50px;
+  width:150px;
+
+  color: var(--azul);
+  background-color: var(--branco);
+  border: 2px solid var(--azul);
+
+  margin: auto;
+  display: inline-block;
+
+  font-size: 15px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+
+  cursor: pointer;
+}
+
+.botao:hover 
+{
+  color:            var(--verde);
+  background-color: var(--branco);
+  border-color:     var(--verde);
+  border: 2px solid var(--verde);
+}
+
+.cascata
+{
+  position: relative;
+  display: inline-block;
+}
+
+.cascata-conteudo 
+{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+ 
+  z-index: 1;
+  
+  color: var(--azul);
+  background-color: var(--azul);
+  border: 2px solid var(--azul);
+
+  margin: auto;
+ 
+  font-size: 15px;
+ 
+  border-radius: 10px;
+  transition-duration: 0.4s;
+
+  cursor: pointer;
+}
+
+.cascata-conteudo a 
+{
+  color: var(--azul);
+  padding: 12px 16px;
+
+  display: block;
+}
+
+
+.cascata:hover
+{
+
+}
+
+.cascata:hover .cascata-conteudo 
+{
+  display: block;
+  border-radius: 10px;
+}
+
+.cascata-conteudo a:hover 
+{
+  border-radius: 10px;
+  color:            var(--verde);
+  background-color: var(--branco);
+  border-color:     var(--verde);
+  border: 2px solid var(--verde);
+
+}
+
+.cascata:focus /* ainda não funcional, é pra o primeiro item, o que entra no submenu, continuar highlitado */
+{
+  background-color: var(--azul);
+}
+
+.caixa
+{
+  text-align: left;
+  border-radius: 10px;
+  height:25px;
+
+  background-color: var(--branco);
+  border-color:     var(--azul);
+  border: 2px solid var(--azul);
+}
+
+.caixa:hover
+{  
+  border-color:     var(--verde);
+  border: 2px solid var(--verde);
+}
+
+.caixa:focus
+{  
+  outline: none;
+  border-color: var(--verde) ;
+}
+
+.painel
+{
+  display: inline-flex;  
+  text-align: left;
+}
+
