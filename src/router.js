@@ -14,4 +14,8 @@ router.put('/tasks/:id',
   tasksController.updateTask,
 );
 
+const loginController = require('./controllers/loginController');
+
+router.get('/login/:cartao', loginController.getSenha);
+
 module.exports = router;
