@@ -1,8 +1,8 @@
 const { client } = require('./connection');
 
 const getAll = async () => {
-  const tasks = await client.query('SELECT * FROM tasks');
-  
+  const query = await client.query({text: 'SELECT * FROM tasks'});
+  const tasks = query.rows;
   return tasks;
 };
 
