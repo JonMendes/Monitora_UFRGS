@@ -1,6 +1,5 @@
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
-const loginErrorMsg = document.getElementById("login-error-msg");
 
 const fetchUsuario = async () => {
   const cartao = loginForm.dado_cartao.value;
@@ -15,7 +14,7 @@ loginButton.addEventListener("click", (e) =>
   const password = loginForm.dado_senha.value;
   fetchUsuario().then((usuario) => {
     if (usuario.senha === password) {
-      if(usuario.cargo === 'professor'){
+      if(usuario.cargo === 'professor'){    // ADICIONAR CASO não for aluno nem professor nem monitor
         window.location.replace("..\\html\\professor.html");
       }
       else{
