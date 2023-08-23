@@ -17,4 +17,5 @@ Clone o repositório e execute o comando `npm install express cors dotenv pg`
 Para inciar o backend, use o comando `npm start`
 
 Para iniciar o backend em modo de desenvolvedor, use o comando `npm run dev`
+
 Nesse modo, o servidor é reinicializado automaticamente toda vez que um arquivo é modificado
