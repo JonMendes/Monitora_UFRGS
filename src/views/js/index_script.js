@@ -21,5 +21,9 @@ loginButton.addEventListener("click", (e) => {
         window.location.replace("..\\html\\aluno.html");
       }
     }
+    else{
+      alert("Senha incorreta!");
+      // window.location.reload();
+    }
   });
 })
