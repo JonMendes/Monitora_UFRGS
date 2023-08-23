@@ -11,13 +11,20 @@ async function solicitarAula(aula) {
   return {idAula: createdAula.idAula};
 }
 
-async function getAulas(idAluno) {
+async function getAulasAluno(idAluno) {
   const query = await client.query('SELECT * FROM aulas WHERE idAluno = $1', [idAluno]);
+  const aulas = query.rows;
+  return aulas;
+};
+
+async function getAulasMonitor(idMonitor) {
+  const query = await client.query('SELECT * FROM aulas WHERE idMonitor = $1', [idMonitor]);
   const aulas = query.rows;
   return aulas;
 };
 
 module.exports = {
   solicitarAula,
-  getAulas
+  getAulasAluno,
+  getAulasMonitor
 };

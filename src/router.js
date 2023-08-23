@@ -10,6 +10,7 @@ router.get('/login/:cartao', loginController.getUsuario);
 router.get('/exists/:cartao', cadastroController.existeUsuario);
 router.post('/cadastro', cadastroController.createUsuario);
 router.post('/solicitarAula', aulasController.solicitarAula);
-router.get('/aulas/:cartao', aulasController.getAulas);
+router.get('/aulasAluno/:cartao', aulasController.getAulasAluno);
+router.get('/aulasMonitor/:cartao', aulasController.getAulasMonitor);
 
 module.exports = router;
