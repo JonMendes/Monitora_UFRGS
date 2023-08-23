@@ -1,11 +1,10 @@
 const { client } = require('./connection');
 
-const getSenha = async (cartao) => {
-  const query = await client.query('SELECT senha FROM usuarios WHERE idUsuario = $1', [cartao]);
-  const senha = query;
-  return senha;
+const getUsuario = async (cartao) => {
+  const query = await client.query('SELECT * FROM usuarios WHERE idUsuario = $1', [cartao]);
+  return query;
 };
 
 module.exports = {
-  getSenha
+  getUsuario
 };

@@ -2,48 +2,25 @@ const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
-// fetchSenha chamado pelo evento "click" da linha 37
-// Se a página recarregar, reescrever como 'async (event)' e descomentar o event.prevent.Default()
-// const username é um objeto com um único campo (cartao) que é enviado como string pelo fetch
-const fetchSenha = async () => {
-  //event.preventDefault();
-
+const fetchUsuario = async () => {
   const cartao = loginForm.dado_cartao.value;
-  const response = await fetch(`http://localhost:3333/login/${cartao}`)
+  const response = await fetch(`http://localhost:3333/login/${cartao}`);
   const respJSON = await response.json();
-  const parsedData = respJSON.rows;
-  const senha = parsedData[0].senha;
-  console.log(senha);
-  return senha;
+  return respJSON.rows[0];
 }
 
 loginButton.addEventListener("click", (e) => 
 {
-    e.preventDefault();
-    //const username = loginForm.dado_cartao.value;
-    const password = loginForm.dado_senha.value;
-    // let db_password;
-    fetchSenha().then((result) => {
-      if (result === password) {
-        //alert("You have successfully logged in.");
-        //location.reload();
-        window.location.replace("..\\html\\home.html")
+  e.preventDefault();
+  const password = loginForm.dado_senha.value;
+  fetchUsuario().then((usuario) => {
+    if (usuario.senha === password) {
+      if(usuario.cargo === 'professor'){
+        window.location.replace("..\\html\\professor.html");
       }
-    });
-    // console.log(password);
-    // console.log(db_password);
-
-    // if (db_password === password) {
-    //     //alert("You have successfully logged in.");
-    //     //location.reload();
-    //     window.location.replace("..\\html\\home.html")
-    // }
-    
-    // else
-    // {
-    //   alert("Errou, burrão. admin/admin.");
-    //   location.reload();
-    // }
+      else{
+        window.location.replace("..\\html\\aluno.html");
+      }
+    }
+  });
 })
-
-
