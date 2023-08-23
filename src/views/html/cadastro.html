@@ -1,17 +1,11 @@
-
-
-
 <!doctype html>
 <html>
 
   <head>
-
     <link rel="stylesheet" href="../css/fontes.css">
     <meta charset="utf-8" />
     <title>Monitora UFRGS - Cadastro</title>
-    
   </head>
-  
 
   <body style = "background-color: var(--azul)">
 
@@ -19,19 +13,24 @@
       <div class = "alinhamentoV">
         <div class = "alinhamentoH">
 
-          <img src="../img/logo.png"/> 
-          <p> Nome: <input class="caixa" type="text" />
-          <p> Cartão: <input class="caixa" type="text" />
-          <p> Senha:  <input class="caixa" type="text" />
-          <p> Confirmar senha:  <input class="caixa" type="text" /> &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+          <img src="../img/logo.png"/>
 
-          <p> </p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-    
-          <button class="botao" onclick="document.location='index.html'"> Voltar </button> 
-          
-          <button class="botao" onclick="document.location='cadastro.html'"> Confirmar </button> 
+          <form id="cadastro-form" target="_blank">
+            <p> Nome: <input class="caixa" type="text" name="dado_nome"/>
+            <p> Cartão: <input class="caixa" type="text" name="dado_cartao"/>
+            <p> Curso: <input class="caixa" type="text" name="dado_curso"/>
+            <p> Senha:  <input class="caixa" type="password" name="dado_senha"/>
+            <p> Confirmar senha: <input class="caixa" type="password" name="dado_confsenha"/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p> 
+            <input class="botao" type="submit" value="Confirmar" id="cadastro-form-submit">
+            <button class="botao" onclick="document.location='index.html'"> Voltar </button> 
+          </form>
 
+        </div>
+      </div>
     </div>
+
+    <script src="../js/cadastro_script.js"></script>
+
   </body>  
 </html>
 

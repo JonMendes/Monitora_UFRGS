@@ -15,7 +15,9 @@ router.put('/tasks/:id',
 );
 
 const loginController = require('./controllers/loginController');
+const cadastroController = require('./controllers/cadastroController');
 
 router.get('/login/:cartao', loginController.getUsuario);
+router.post('/cadastro', cadastroController.createUsuario);
 
 module.exports = router;

@@ -8,8 +8,7 @@ const fetchUsuario = async () => {
   return respJSON.rows[0];
 }
 
-loginButton.addEventListener("click", (e) => 
-{
+loginButton.addEventListener("click", (e) => {
   e.preventDefault();
   const password = loginForm.dado_senha.value;
   fetchUsuario().then((usuario) => {
