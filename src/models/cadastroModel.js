@@ -10,6 +10,15 @@ const createUsuario = async (user) => {
   return {insertId: createdUser.insertId};
 };
 
+const existeUsuario = async (idUsuario) => {
+  const query = 'SELECT EXISTS(SELECT * FROM usuarios WHERE idUsuario = $1)';
+
+  const exists = await client.query(query, [idUsuario]);
+
+  return exists;
+};
+
 module.exports = {
-  createUsuario
+  createUsuario,
+  existeUsuario
 };
