@@ -1,6 +1,6 @@
 # Monitora UFRGS
 
-Trabalho da disciplina de Engenharia de Software
+Trabalho da disciplina de Engenharia de Software.
 
 ## Descrição
 
