@@ -13,6 +13,7 @@ loginButton.addEventListener("click", (e) => {
   const password = loginForm.dado_senha.value;
   fetchUsuario().then((usuario) => {
     if (usuario.senha === password) {
+      window.localStorage.setItem('dadosUsuario', JSON.stringify(usuario));
       if(usuario.cargo === 'professor'){    // ADICIONAR CASO não for aluno nem professor nem monitor
         window.location.replace("..\\html\\professor.html");
       }
