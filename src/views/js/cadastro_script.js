@@ -21,7 +21,7 @@ const criarUsuario = async (event) => {
   const senha = cadastroForm.dado_senha.value;
   const conf_senha = cadastroForm.dado_confsenha.value;
 
-  // TO DO: erificar se o cadastro já existe
+  // TO DO: verificar se o cadastro já existe
 
   if(senha === conf_senha){
     await fetch('http://localhost:3333/cadastro', {
@@ -29,8 +29,6 @@ const criarUsuario = async (event) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(usuario),
     });
-
-    // TO DO: enviar alerta de confirmação de cadastro realizado
 
     window.location.replace("..\\html\\index.html");
   }
