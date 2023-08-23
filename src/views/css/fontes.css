@@ -7,6 +7,8 @@
   --branco:  white;
   --preto:   black;
   --azul:    rgb(0, 162, 232);
+  --azul2:   rgb(0, 0, 160);
+  --azul3:   rgb(58, 183, 255);
   --verde:   rgb(1, 255, 115);
 } 
 
@@ -41,6 +43,7 @@
   background-color: var(--branco);
   border: 2px solid var(--azul);
 
+
   margin: auto;
   display: inline-block;
 
@@ -49,15 +52,17 @@
   border-radius: 10px;
   transition-duration: 0.4s;
 
+  font-weight: bold;
+
   cursor: pointer;
 }
 
 .botao:hover 
 {
-  color:            var(--verde);
+  color:            var(--azul2);
   background-color: var(--branco);
-  border-color:     var(--verde);
-  border: 2px solid var(--verde);
+  border-color:     var(--azul2);
+  border: 2px solid var(--azul2);
 }
 
 .cascata
@@ -111,10 +116,10 @@
 .cascata-conteudo a:hover 
 {
   border-radius: 10px;
-  color:            var(--verde);
+  color:            var(--azul2);
   background-color: var(--branco);
-  border-color:     var(--verde);
-  border: 2px solid var(--verde);
+  border-color:     var(--azul2);
+  border: 2px solid var(--azul2);
 
 }
 
@@ -136,14 +141,14 @@
 
 .caixa:hover
 {  
-  border-color:     var(--verde);
-  border: 2px solid var(--verde);
+  border-color:     var(--azul2);
+  border: 2px solid var(--azul2);
 }
 
 .caixa:focus
 {  
   outline: none;
-  border-color: var(--verde) ;
+  border-color: var(--azul2) ;
 }
 
 .painel
@@ -152,3 +157,24 @@
   text-align: left;
 }
 
+.tabela
+{
+  font-size: 20px;
+
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-collapse:collapse;
+
+ 
+  border-radius: 10px;
+ 
+
+  color:            var(--preto);
+  background-color: var(--branco);
+  border-color:     var(--preto);
+  border: 2px solid var(--azul2);
+
+
+}
