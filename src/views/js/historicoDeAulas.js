@@ -40,17 +40,11 @@ const createRow = (task) => {
 
   // tr.appendChild(td_idaula);
   // tr.appendChild(td_idaluno);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_disciplina);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_idmonitor);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_status);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_inicio);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_fim);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_modalidade);
 
   return tr;

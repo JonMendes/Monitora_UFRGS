@@ -101,12 +101,6 @@
   display: block;
 }
 
-
-.cascata:hover
-{
-
-}
-
 .cascata:hover .cascata-conteudo 
 {
   display: block;
