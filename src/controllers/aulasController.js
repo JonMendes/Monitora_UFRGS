@@ -5,6 +5,13 @@ async function solicitarAula(request, response){
   return response.status(201).json(createdAula);
 }
 
+async function getAulas(request, response){
+  const {cartao} = request.params;
+  const aulas = await aulasModel.getAulas(cartao);
+  return response.status(200).json(aulas);
+}
+
 module.exports = {
-  solicitarAula
+  solicitarAula,
+  getAulas
 };
