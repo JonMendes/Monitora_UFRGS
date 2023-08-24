@@ -57,7 +57,7 @@ const createSelect = async() => {
     });
 }
 
-barra.appendChild(createSelect());
+barra.append(createSelect());
 
 const barra_select = document.querySelector('select')
 barra_select.addEventListener("click", fetchMonitores(barra_select.value))
