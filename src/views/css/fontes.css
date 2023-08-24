@@ -23,15 +23,15 @@
   
 .alinhamentoH 
 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.alinhamentoVs /* desativado por enquanto, apagar o "s" para testar*/
+.alinhamentoV /* desativado por enquanto, apagar o "s" para testar*/
 {
-  margin: 0;
-  top: 50%;
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
+  text-align: center;
 }
 
 .botao 

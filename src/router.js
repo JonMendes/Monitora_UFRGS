@@ -2,15 +2,20 @@ const express = require('express');
 
 const router = express.Router();
 
-const loginController = require('./controllers/loginController');
+const usuarioController = require('./controllers/usuarioController');
 const cadastroController = require('./controllers/cadastroController');
 const aulasController = require('./controllers/aulasController');
+const disciplinaController = require('./controllers/disciplinaController');
 
-router.get('/login/:cartao', loginController.getUsuario);
+// gets
+router.get('/usuario/:cartao', usuarioController.getUsuario);
 router.get('/exists/:cartao', cadastroController.existeUsuario);
-router.post('/cadastro', cadastroController.createUsuario);
-router.post('/solicitarAula', aulasController.solicitarAula);
 router.get('/aulasAluno/:cartao', aulasController.getAulasAluno);
 router.get('/aulasMonitor/:cartao', aulasController.getAulasMonitor);
+router.get('/disciplina', disciplinaController.getDisciplina);
+
+// posts
+router.post('/cadastro', cadastroController.createUsuario);
+router.post('/solicitarAula', aulasController.solicitarAula);
 
 module.exports = router;

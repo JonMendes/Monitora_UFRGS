@@ -16,9 +16,10 @@
   <body style = "background-color: var(--azul)">
     <div class = "parametros">
         <div class = "alinhamentoV">
+            <a href="aluno.html"> <img border="0" alt="logo" src="../img/logo.png" > </a> <p></p>
+
             <div class = "alinhamentoH">
                 
-                <a href="aluno.html"> <img border="0" alt="logo" src="../img/logo.png" > </a> <p></p>
 
                 <button class="botao" onclick="document.location='aluno.html'"> Perfil </button>
 
@@ -34,9 +35,6 @@
                 <button class="botao" onclick="document.location='sejaUmMonitor.html'"> Seja um monitor </button>
                 <button class="botao" onclick="document.location='index.html'"> Sair </button>
 
-                <form id="cadastro-form" target="_blank">
-                    <p> Disciplina: <input class="caixa" type="text" name="dado_nome"/>
-                    <p> Cartão Monitor: <input class="caixa" type="text" name="dado_cartao"/>
 
 
                     
@@ -61,6 +59,35 @@
                     </tbody>
                 </table>
             </div>
+
+            <form id="cadastro-form" target="_blank">
+                <p> Disciplina: <input class="caixa" type="text" name="dado_nome"/>
+                <p> Cartão Monitor: <input class="caixa" type="text" name="dado_cartao"/>
+
+
+                
+
+                <p> Horário de Início: <input class="caixa" type="text" name="dado_curso"/>
+                <p> Horário de Final:  <input class="caixa" type="password" name="dado_senha"/>
+                <p> Remoto: <input class="caixa" type="password" name="dado_confsenha"/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p> 
+                <input class="botao" type="submit" value="Confirmar" id="cadastro-form-submit">
+                <button class="botao" onclick="document.location='index.html'"> Voltar </button> 
+              </form>
+
+            <p></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cartão</th>
+                        <th>Nome</th>
+                      </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            
         </div>
     </div>
     <script src="../js/solicitarAula.js"></script>
