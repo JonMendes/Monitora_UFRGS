@@ -1,6 +1,6 @@
 const usuario = JSON.parse(window.localStorage.getItem('dadosUsuario'));
 const tbody = document.querySelector('tbody');
-const barra = document.querySelector('p');
+const barra = document.querySelector('.selectbotao');
 const disciplinas = usuario.disciplinasmatriculadas
 
 const createRow = async (m) => {
@@ -38,10 +38,10 @@ const createSelect = async() => {
 
     const options = ""
     disciplinas.forEach((discp) => {
-        options = options +"<option value="+ discp +">"+ discp +"</option>"
+        options = options + `<option value="`+ discp +`">`+ discp +"</option>"
       });
 
-    const select = createElement('select', '', options);
+    const select = document.createElement('select', '', options);
     
     return select;
 }
