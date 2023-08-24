@@ -161,25 +161,22 @@
 
   border-collapse:collapse;
 
- 
   border-radius: 10px;
  
-
-  color:            var(--preto);
+  color: var(--azul2);
   background-color: var(--branco);
   border-color:     var(--preto);
   border: 2px solid var(--azul2);
-
-
 }
 
-td, th {
+td, th 
+{
   padding: 10px 15px;
-  border: 1px solid #DDD;
-  text-align: center;
+  text-align: left;
 }
 
-td {
-  color: #333;
-  font-weight: 600;
+td 
+{
+  color: var(--preto);
+  font-weight: bold;
 }
