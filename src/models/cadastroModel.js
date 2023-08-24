@@ -18,7 +18,18 @@ const existeUsuario = async (idUsuario) => {
   return exists;
 };
 
+const listaUsuarios = async (disciplina) => {
+  
+  const query = 'SELECT * FROM usuarios WHERE disciplina = $1 AND cargo = Monitor';
+
+  const exists = await client.query(query, [disciplina]);
+  //const exists = query.rows;
+
+  return exists;
+};
+
 module.exports = {
   createUsuario,
-  existeUsuario
+  existeUsuario,
+  listaUsuarios
 };
