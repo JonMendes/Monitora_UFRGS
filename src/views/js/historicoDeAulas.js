@@ -2,11 +2,11 @@ const usuario = JSON.parse(window.localStorage.getItem('dadosUsuario'));
 const tbody = document.querySelector('tbody');
 
 
-const fetchTasks = async () => {
+const fetchAulas = async () => {
   const cartao = usuario.idusuario
   const response = await fetch(`http://localhost:3333/aulasAluno/${cartao}`)
-  const tasks = await response.json()
-  return tasks;
+  const aulas = await response.json()
+  return aulas;
 }
 
 const createElement = (tag, innerText = '', innerHTML = '') => {
@@ -23,10 +23,10 @@ const createElement = (tag, innerText = '', innerHTML = '') => {
   return element;
 }
 
-const createRow = (task) => {
+const createRow = (aula) => {
 
   //const { id, title, created_at, status } = task;
-  const { idaula, idaluno, idmonitor, disciplina, status, inicio, fim, modalidade } = task;
+  const { idaula, idaluno, idmonitor, disciplina, status, inicio, fim, modalidade, telefone, email } = aula;
 
   const tr = createElement('tr');
   // const td_idaula = createElement('td', idaula);
@@ -37,34 +37,32 @@ const createRow = (task) => {
   const td_inicio = createElement('td', inicio);
   const td_fim = createElement('td', fim);
   const td_modalidade = createElement('td', modalidade);
+  const td_telefone = createElement('td', telefone);
+  const td_email = createElement('td', email);
 
   // tr.appendChild(td_idaula);
   // tr.appendChild(td_idaluno);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_disciplina);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_idmonitor);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_status);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_inicio);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_fim);
-  tr.appendChild(&nbsp);
   tr.appendChild(td_modalidade);
+  tr.appendChild(td_telefone);
+  tr.appendChild(td_email);
 
   return tr;
 } 
 
-const loadTasks = async () => {
-  const tasks = await fetchTasks();
+const loadAulas = async () => {
+  const aulas = await fetchAulas();
 
   tbody.innerHTML = '';
 
-  tasks.forEach((task) => {
-    const tr = createRow(task);
+  aulas.forEach((aula) => {
+    const tr = createRow(aula);
     tbody.appendChild(tr);
   });
 }
 
-loadTasks();
+loadAulas();

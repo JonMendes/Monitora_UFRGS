@@ -101,12 +101,6 @@
   display: block;
 }
 
-
-.cascata:hover
-{
-
-}
-
 .cascata:hover .cascata-conteudo 
 {
   display: block;
@@ -167,14 +161,22 @@
 
   border-collapse:collapse;
 
- 
   border-radius: 10px;
  
-
-  color:            var(--preto);
+  color: var(--azul2);
   background-color: var(--branco);
   border-color:     var(--preto);
   border: 2px solid var(--azul2);
+}
 
+td, th 
+{
+  padding: 10px 15px;
+  text-align: left;
+}
 
+td 
+{
+  color: var(--preto);
+  font-weight: bold;
 }

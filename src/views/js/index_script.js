@@ -3,7 +3,7 @@ const loginButton = document.getElementById("login-form-submit");
 
 const fetchUsuario = async () => {
   const cartao = loginForm.dado_cartao.value;
-  const response = await fetch(`http://localhost:3333/login/${cartao}`);
+  const response = await fetch(`http://localhost:3333/usuario/${cartao}`);
   const respJSON = await response.json();
   return respJSON.rows[0];
 }

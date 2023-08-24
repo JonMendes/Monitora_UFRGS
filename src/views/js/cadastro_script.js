@@ -15,6 +15,8 @@ const criarUsuario = async (event) => {
     nome: cadastroForm.dado_nome.value,
     idusuario: cadastroForm.dado_cartao.value,
     curso: cadastroForm.dado_curso.value,
+    email: cadastroForm.dado_email.value,
+    telefone: cadastroForm.dado_telefone.value,
     senha: cadastroForm.dado_senha.value,
   }
   
